@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 2</title>
+<div>
+    <p><font size="6" face="cambria" color="steelblue">Tried and Tested: A Few of the Best Asian (East and Southeast) Restaurants in Chicago</font></p>
+        </div>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+        integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [41.8869407,-87.5839014],
+              zoom: 11
+          });
+
+    L.tileLayer('http://tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
+    maxZoom:14,
+    minZoom: 11
+}).addTo(map);
+
+    var phoIcon = L.icon({
+    iconUrl: 'pho.png', // url that links to the icon image file
+    iconSize:     [60, 60], // size of the icon image in pixels
+    iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+    popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor      
+});
+    var ramenIcon = L.icon({
+    iconUrl: 'ramen.png', // url that links to the icon image file
+    iconSize:     [64,64], // size of the icon image in pixels
+    iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+    popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});
+    var sushiIcon = L.icon({
+    iconUrl: 'sushi.png', // url that links to the icon image file
+    iconSize:     [64,64], // size of the icon image in pixels
+    iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+    popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});           
+    var dimsumIcon = L.icon({
+    iconUrl: 'dimsum.png', // url that links to the icon image file
+    iconSize:     [64,64], // size of the icon image in pixels
+    iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+    popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});
+    var koreanIcon = L.icon({
+    iconUrl: 'korean.png', // url that links to the icon image file
+    iconSize:     [64,64], // size of the icon image in pixels
+    iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+    popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});      
+var marker1 = L.marker([41.9839193,-87.6615666],{icon: phoIcon}).addTo(map);
+var marker2 = L.marker([41.9635439,-87.6876635], {icon: ramenIcon}).addTo(map);
+var marker3 = L.marker([41.9678259,-87.8291847], {icon: sushiIcon}).addTo(map);
+var marker4 = L.marker([41.8532852,-87.7048741], {icon: dimsumIcon}).addTo(map);
+var marker5 = L.marker([41.9775553,-87.8200609], {icon: koreanIcon}).addTo(map);
+            
+            
+var pic1 = '<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLJpDDKbAK47_47AnzProe_cdxUdMBCLKwttXB3uNY6ZG-m2QE width="250">';
+var pic2 = '<img src=https://s3-media4.fl.yelpcdn.com/bphoto/Mlbt7kJ6ojOORqRePxXsqw/258s.jpg width="250">';
+var pic3 = '<img src=https://media-cdn.tripadvisor.com/media/photo-s/09/c6/40/20/sushi-tokoro.jpg width="250">';
+var pic4 = '<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl3XmRK9uWX8PbnP2Zp2Nff5iJOmLtvKH9oyUBd7-cQJc9M1zkbQ width="250">';
+var pic5 = '<img src=https://www.likealocalguide.com/media/cache/07/56/07560dad8374b8441e1b56e705ad5195.jpg width="250">';
+            
+marker1.bindPopup('<p style="color:FORESTGREEN;font-weight:bold">Little Vietnam</p>'+'<p style="color:FORESTGREEN;">This place has the most flavorful Vegetarian Pho</p>' + pic1);
+marker2.bindPopup('<p style="color:midnightblue;font-weight:bold"> Miku Sushi</p>' + '<p style="color:midnightblue;">The best place for Tonkatsu Ramen</p>' + pic2);
+marker3.bindPopup('<p style="color:darkorange;font-weight:bold"> Sushi Tokoro</p>' + '<p style ="color:darkorange;"> One of the best "all-you-can-eat" sushi joints </p>' + pic3);
+marker4.bindPopup('<p style="color:SADDLEBROWN;font-weight:bold"> MingHin Cuisine </p>' + '<p style ="color:SADDLEBROWN;"> Great dimsum! </p>' + pic4);
+marker5.bindPopup('<p style="color:SADDLEBROWN;font-weight:bold"> San Soo Gab San </p>' + '<p style ="color:SADDLEBROWN;"> Korean BBQ and Soju! </p>' + pic5);
+       
+            
+
+        </script>
+   </body>
+</html>
